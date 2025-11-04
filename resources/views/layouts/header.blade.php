@@ -16,11 +16,11 @@
 
     <!-- Navigation -->
     <nav class="ff-nav" aria-label="Primary">
-      <a href="#" class="ff-nav__link is-active">Home</a>
+      <a href="{{ route('index') }}" class="ff-nav__link is-active">Home</a>
       <a href="{{ route('aboutus') }}" class="ff-nav__link">About Us</a>
 
-      <a href="#privacy" class="ff-nav__link">Privacy Policy</a>
-      <a href="#terms" class="ff-nav__link">Terms &amp; Conditions</a>
+      <a href="{{ route('policy') }}" class="ff-nav__link">Privacy Policy</a>
+      <a href="{{ route('terms') }}">Terms &amp; Conditions</a>
       <a href="#contact" class="ff-nav__link">Contact</a>
     </nav>
 
@@ -43,10 +43,10 @@
   <!-- Drawer (mobile) -->
   <div class="ff-drawer" id="drawer" hidden>
     <div class="ff-drawer__panel" role="dialog" aria-label="Mobile Menu">
-      <a href="#" class="ff-drawer__link">Home</a>
-      <a href="#about" class="ff-drawer__link">About Us</a>
-      <a href="#privacy" class="ff-drawer__link">Privacy Policy</a>
-      <a href="#terms" class="ff-drawer__link">Terms &amp; Conditions</a>
+      <a href="{{ route('index') }}" class="ff-drawer__link">Home</a>
+      <a href="{{ route('aboutus') }}" class="ff-drawer__link">About Us</a>
+      <a href="{{ route('policy') }}" class="ff-drawer__link">Privacy Policy</a>
+      <a href="{{ route('terms') }}" class="ff-drawer__link">Terms &amp; Conditions</a>
       <a href="#contact" class="ff-drawer__link">Contact</a>
       <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>

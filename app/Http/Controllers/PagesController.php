@@ -25,4 +25,15 @@ class PagesController extends Controller
     {
         return view('aboutus');
     }
+
+
+    public function policy()
+    {
+        return view('policy');
+    }
+
+    public function terms()
+    {
+        return view('terms');
+    }
 }
