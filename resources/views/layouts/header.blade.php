@@ -11,35 +11,11 @@
 
     <!-- Navigation -->
     <nav class="ff-nav" aria-label="Primary">
-      <a href="{{ route('index') }}"
-         class="ff-nav__link{{ request()->routeIs('index') ? ' is-active' : '' }}"
-         @if(request()->routeIs('index')) aria-current="page" @endif>
-        Home
-      </a>
-
-      <a href="{{ route('aboutus') }}"
-         class="ff-nav__link{{ request()->routeIs('aboutus') ? ' is-active' : '' }}"
-         @if(request()->routeIs('aboutus')) aria-current="page" @endif>
-        About Us
-      </a>
-
-      <a href="{{ route('policy') }}"
-         class="ff-nav__link{{ request()->routeIs('policy') ? ' is-active' : '' }}"
-         @if(request()->routeIs('policy')) aria-current="page" @endif>
-        Privacy Policy
-      </a>
-
-      <a href="{{ route('terms') }}"
-         class="ff-nav__link{{ request()->routeIs('terms') ? ' is-active' : '' }}"
-         @if(request()->routeIs('terms')) aria-current="page" @endif>
-        Terms &amp; Conditions
-      </a>
-
-      <a href="{{ route('contact') }}"
-         class="ff-nav__link{{ request()->routeIs('contact') ? ' is-active' : '' }}"
-         @if(request()->routeIs('contact')) aria-current="page" @endif>
-        Contact
-      </a>
+      <a href="{{ route('index') }}" class="ff-nav__link {{ request()->routeIs('index') ? 'is-active' : '' }}">Home</a>
+      <a href="{{ route('aboutus') }}" class="ff-nav__link {{ request()->routeIs('aboutus') ? 'is-active' : '' }}">About Us</a>
+      <a href="{{ route('policy') }}" class="ff-nav__link {{ request()->routeIs('policy') ? 'is-active' : '' }}">Privacy Policy</a>
+      <a href="{{ route('terms') }}" class="ff-nav__link {{ request()->routeIs('terms') ? 'is-active' : '' }}">Terms &amp; Conditions</a>
+      <a href="{{ route('contact') }}" class="ff-nav__link {{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact</a>
     </nav>
 
     <!-- Call CTA -->
@@ -60,35 +36,17 @@
 
   <!-- Drawer (mobile) -->
   <div class="ff-drawer" id="drawer" hidden>
+    <!-- Panel is ABOVE overlay via z-index -->
     <div class="ff-drawer__panel" role="dialog" aria-label="Mobile Menu">
-      <a href="{{ route('index') }}"
-         class="ff-drawer__link{{ request()->routeIs('index') ? ' is-active' : '' }}"
-         @if(request()->routeIs('index')) aria-current="page" @endif>
-        Home
-      </a>
-      <a href="{{ route('aboutus') }}"
-         class="ff-drawer__link{{ request()->routeIs('aboutus') ? ' is-active' : '' }}"
-         @if(request()->routeIs('aboutus')) aria-current="page" @endif>
-        About Us
-      </a>
-      <a href="{{ route('policy') }}"
-         class="ff-drawer__link{{ request()->routeIs('policy') ? ' is-active' : '' }}"
-         @if(request()->routeIs('policy')) aria-current="page" @endif>
-        Privacy Policy
-      </a>
-      <a href="{{ route('terms') }}"
-         class="ff-drawer__link{{ request()->routeIs('terms') ? ' is-active' : '' }}"
-         @if(request()->routeIs('terms')) aria-current="page" @endif>
-        Terms &amp; Conditions
-      </a>
-      <a href="{{ route('contact') }}"
-         class="ff-drawer__link{{ request()->routeIs('contact') ? ' is-active' : '' }}"
-         @if(request()->routeIs('contact')) aria-current="page" @endif>
-        Contact
-      </a>
-
+      <a href="{{ route('index') }}" class="ff-drawer__link {{ request()->routeIs('index') ? 'is-active' : '' }}">Home</a>
+      <a href="{{ route('aboutus') }}" class="ff-drawer__link {{ request()->routeIs('aboutus') ? 'is-active' : '' }}">About Us</a>
+      <a href="{{ route('policy') }}" class="ff-drawer__link {{ request()->routeIs('policy') ? 'is-active' : '' }}">Privacy Policy</a>
+      <a href="{{ route('terms') }}" class="ff-drawer__link {{ request()->routeIs('terms') ? 'is-active' : '' }}">Terms &amp; Conditions</a>
+      <a href="{{ route('contact') }}" class="ff-drawer__link {{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact</a>
       <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>
+
+    <!-- Overlay UNDER the panel via z-index -->
     <button class="ff-drawer__overlay" type="button" aria-label="Close menu"></button>
   </div>
 
@@ -101,28 +59,23 @@
       --logo-size:44px; --dot-size:10px;
     }
 
-    .ff-header{position:sticky;top:0;z-index:50;background:var(--ff-bg);box-shadow:var(--ff-shadow)}
+    .ff-header{position:sticky;top:0;z-index:1000;background:var(--ff-bg);box-shadow:var(--ff-shadow)}
     .ff-header__inner{max-width:1200px;margin:0 auto;padding:1rem 1.2rem;display:flex;align-items:center;gap:22px}
 
-    /* LOGO */
+    /* Logo */
     .ff-logo{display:flex;align-items:center;text-decoration:none;color:var(--ff-text);font-size:1.5rem;font-weight:800;letter-spacing:.2px}
     .ff-logo__icon{width:var(--logo-size);height:var(--logo-size);margin-right:10px;display:block}
     .ff-logo__dot{width:var(--dot-size);height:var(--dot-size);background:var(--ff-orange);border-radius:50%;margin:0 10px 0 2px}
-    .ff-logo__text strong{color:var(--ff-blue)}
-    .ff-logo__text .accent{color:var(--ff-orange)}
+    .ff-logo__text strong{color:var(--ff-blue)} .ff-logo__text .accent{color:var(--ff-orange)}
 
-    /* NAV */
+    /* Nav */
     .ff-nav{display:flex;align-items:center;gap:2.2rem;margin-left:auto;margin-right:auto}
     .ff-nav__link{position:relative;text-decoration:none;color:var(--ff-text);font-weight:600;transition:color .25s}
     .ff-nav__link:hover{color:var(--ff-blue)}
-    .ff-nav__link.is-active{color:var(--ff-blue)}
-    .ff-nav__link.is-active::after{
-      content:"";position:absolute;left:0;right:0;margin:auto;bottom:-10px;width:38px;height:3px;
-      background:var(--ff-blue);border-radius:2px
-    }
+    .ff-nav__link.is-active::after{content:"";position:absolute;left:0;right:0;margin:auto;bottom:-10px;width:38px;height:3px;background:var(--ff-blue);border-radius:2px}
 
     /* CTA */
-    .ff-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--ff-blue);color:var(--ff-white);padding:.7rem 1.2rem;border-radius:26px;text-decoration:none;font-weight:800;transition:transform .15s,background .2s}
+    .ff-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--ff-blue);color:#fff;padding:.7rem 1.2rem;border-radius:26px;text-decoration:none;font-weight:800;transition:transform .15s,background .2s}
     .ff-cta:hover{background:var(--ff-blue-dark);transform:translateY(-1px)}
 
     /* Burger */
@@ -131,27 +84,35 @@
 
     /* Drawer */
     .ff-drawer[hidden]{display:none}
-    .ff-drawer{position:fixed;inset:0;z-index:60}
-    .ff-drawer__overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);border:none}
-    .ff-drawer__panel{position:absolute;right:0;top:0;height:100%;width:280px;max-width:85%;background:var(--ff-bg);padding:1rem;display:flex;flex-direction:column;box-shadow:-8px 0 24px rgba(15,22,33,.18);animation:ff-slide-in .28s ease}
+    .ff-drawer{position:fixed;inset:0;z-index:1200}
+
+    /* ✅ Panel above overlay so links are clickable */
+    .ff-drawer__panel{
+      position:absolute;right:0;top:0;height:100%;width:280px;max-width:85%;
+      background:var(--ff-bg);padding:1rem;display:flex;flex-direction:column;
+      box-shadow:-8px 0 24px rgba(15,22,33,.18);animation:ff-slide-in .28s ease;
+      z-index:2;
+    }
     @keyframes ff-slide-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+
+    .ff-drawer__overlay{
+      position:absolute;inset:0;background:rgba(0,0,0,.45);border:none;z-index:1;
+    }
+
     .ff-drawer__link{padding:.95rem 0;border-bottom:1px solid #e8eef5;text-decoration:none;color:var(--ff-text);font-weight:600}
     .ff-drawer__link:hover{color:var(--ff-blue)}
-    .ff-drawer__link.is-active{color:var(--ff-blue);font-weight:800}
+    .ff-drawer__link.is-active{color:var(--ff-blue)}
     .ff-drawer__cta{margin-top:1rem;text-align:center;background:var(--ff-blue);color:#fff;padding:.75rem 1rem;border-radius:16px;text-decoration:none;font-weight:700}
 
-    /* Responsive logo sizing */
-    @media (min-width:1400px){ :root{ --logo-size:48px; --dot-size:12px; } }
+    /* Responsive */
+    @media (min-width:1400px){ :root{--logo-size:48px;--dot-size:12px;} }
     @media (max-width:1024px){
       .ff-nav{display:none}
       .ff-burger{display:flex;margin-left:auto}
-      :root{ --logo-size:40px; --dot-size:9px; }
+      :root{--logo-size:40px;--dot-size:9px;}
     }
-    @media (max-width:640px){ :root{ --logo-size:34px; --dot-size:8px; } }
-    @media (max-width:420px){
-      :root{ --logo-size:30px; --dot-size:7px; }
-      .ff-cta__text{display:none}
-    }
+    @media (max-width:640px){ :root{--logo-size:34px;--dot-size:8px;} }
+    @media (max-width:420px){ :root{--logo-size:30px;--dot-size:7px;} .ff-cta__text{display:none} }
   </style>
 
   <script>
@@ -159,11 +120,28 @@
       const burger = document.getElementById('burgerBtn');
       const drawer = document.getElementById('drawer');
       const overlay = drawer.querySelector('.ff-drawer__overlay');
-      function openDrawer(){ drawer.hidden=false; burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-      function closeDrawer(){ drawer.hidden=true; burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+      function openDrawer(){
+        drawer.hidden = false;
+        burger.setAttribute('aria-expanded','true');
+        document.body.style.overflow = 'hidden';      // prevent background scroll
+      }
+      function closeDrawer(){
+        drawer.hidden = true;
+        burger.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';            // restore scroll
+      }
+
       burger.addEventListener('click', openDrawer);
       overlay.addEventListener('click', closeDrawer);
-      window.addEventListener('keydown', e => { if(e.key==='Escape' && !drawer.hidden) closeDrawer(); });
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !drawer.hidden) closeDrawer();
+      });
+
+      // Close after clicking any drawer link
+      drawer.querySelectorAll('.ff-drawer__link, .ff-drawer__cta').forEach(a=>{
+        a.addEventListener('click', closeDrawer);
+      });
     })();
   </script>
 </header>

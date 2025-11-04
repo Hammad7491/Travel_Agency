@@ -66,7 +66,7 @@
 
     .ff-simple-footer {
       font-family: 'Inter', system-ui, sans-serif;
-      background: #07131c; /* dark footer background only */
+      background: #07131c;
       color: #dfe8f2;
       padding: 40px 16px 24px;
       position: relative;
@@ -81,86 +81,31 @@
       gap: 28px;
     }
 
-    .ff-sf-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .ff-sf-brand { display: flex; align-items: center; gap: 10px; }
+    .ff-sf-logo { width: 28px; height: 28px; }
 
-    .ff-sf-logo {
-      width: 28px;
-      height: 28px;
-    }
+    .ff-sf-title { font-size: 24px; font-weight: 900; color: #fff; }
+    .ff-sf-title span { color: #0B63A3; }
 
-    .ff-sf-title {
-      font-size: 24px;
-      font-weight: 900;
-      color: #ffffff;
-    }
+    .ff-sf-tag { margin: 10px 0 0; color: #b5c2d3; line-height: 1.6; max-width: 420px; }
 
-    .ff-sf-title span {
-      color: #0B63A3;
-    }
+    .ff-sf-head { margin: 0 0 10px; color: #fff; font-size: 17px; font-weight: 800; }
 
-    .ff-sf-tag {
-      margin: 10px 0 0;
-      color: #b5c2d3;
-      line-height: 1.6;
-      max-width: 420px;
-    }
-
-    .ff-sf-head {
-      margin: 0 0 10px;
-      color: #ffffff;
-      font-size: 17px;
-      font-weight: 800;
-    }
-
-    .ff-sf-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .ff-sf-list a {
-      color: #dfe8f2;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .ff-sf-list a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
+    .ff-sf-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .ff-sf-list a { color: #dfe8f2; text-decoration: none; font-weight: 600; }
+    .ff-sf-list a:hover { color: #fff; text-decoration: underline; }
 
     .ff-sf-rule {
-      max-width: 1200px;
-      margin: 22px auto;
-      border: none;
-      border-top: 1px solid #1a2a38;
+      max-width: 1200px; margin: 22px auto;
+      border: none; border-top: 1px solid #1a2a38;
     }
 
-    .ff-sf-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-      color: #b5c2d3;
-    }
+    .ff-sf-bottom { max-width: 1200px; margin: 0 auto; text-align: center; color: #b5c2d3; }
+    .ff-sf-copy { margin: 0; font-size: 14px; }
+    .ff-sf-line { margin: 4px 0 0; font-size: 13px; color: #9fb1c4; }
 
-    .ff-sf-copy {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .ff-sf-line {
-      margin: 4px 0 0;
-      font-size: 13px;
-      color: #9fb1c4;
-    }
-
-    .ff-sf-fab {
+    /* Floating Call Button */
+    .ff-sf-fab{
       position: fixed;
       right: 20px;
       bottom: 20px;
@@ -173,38 +118,49 @@
       padding: 12px 16px;
       border-radius: 999px;
       text-decoration: none;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
-      border: 1px solid rgba(255, 255, 255, .1);
+      box-shadow: 0 10px 24px rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.1);
       z-index: 999;
+      font-size: 14px;
+      line-height: 1;
     }
+    .ff-sf-fab:hover{ background:#084f82; }
 
-    .ff-sf-fab:hover {
-      background: #084f82;
-    }
-
-    @media (max-width: 1024px) {
-      .ff-sf-wrap {
-        grid-template-columns: 1fr 1fr;
+    /* Tablet ↓ : keep right corner, slightly smaller */
+    @media (max-width: 768px){
+      .ff-sf-fab{
+        right: 16px; bottom: 16px;
+        padding: 10px 12px;
+        gap: 8px;
+        font-size: 13px;
+        box-shadow: 0 8px 18px rgba(0,0,0,.28);
       }
     }
 
-    @media (max-width: 640px) {
-      .ff-sf-wrap {
-        grid-template-columns: 1fr;
+    /* Mobile ↓ : compact in the right corner */
+    @media (max-width: 640px){
+      .ff-sf-wrap{ grid-template-columns: 1fr; }
+      .ff-sf-fab{
+        right: 14px; bottom: 14px;
+        padding: 8px 10px;
+        gap: 6px;
+        font-size: 12px;
+        border-radius: 999px;
       }
+      .ff-sf-fab svg{ width: 16px; height: 16px; }
+    }
 
-      .ff-sf-fab {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+    /* Very small phones: keep number but extra compact */
+    @media (max-width: 360px){
+      .ff-sf-fab{
+        right: 12px; bottom: 12px;
+        padding: 8px 9px;
+        font-size: 11px;
       }
     }
   </style>
 
   <script>
-    (function() {
-      const y = document.getElementById('ffYear');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
+    (function(){ const y=document.getElementById('ffYear'); if(y) y.textContent=new Date().getFullYear(); })();
   </script>
 </footer>
