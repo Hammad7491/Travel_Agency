@@ -17,9 +17,10 @@
     <!-- Navigation -->
     <nav class="ff-nav" aria-label="Primary">
       <a href="#" class="ff-nav__link is-active">Home</a>
-      <a href="#" class="ff-nav__link">About</a>
-      <a href="#" class="ff-nav__link">Services</a>
-      <a href="#" class="ff-nav__link">Routes</a>
+      <a href="#about" class="ff-nav__link">About Us</a>
+      <a href="#privacy" class="ff-nav__link">Privacy Policy</a>
+      <a href="#terms" class="ff-nav__link">Terms &amp; Conditions</a>
+      <a href="#contact" class="ff-nav__link">Contact</a>
     </nav>
 
     <!-- Call CTA -->
@@ -42,9 +43,10 @@
   <div class="ff-drawer" id="drawer" hidden>
     <div class="ff-drawer__panel" role="dialog" aria-label="Mobile Menu">
       <a href="#" class="ff-drawer__link">Home</a>
-      <a href="#" class="ff-drawer__link">About</a>
-      <a href="#" class="ff-drawer__link">Services</a>
-      <a href="#" class="ff-drawer__link">Routes</a>
+      <a href="#about" class="ff-drawer__link">About Us</a>
+      <a href="#privacy" class="ff-drawer__link">Privacy Policy</a>
+      <a href="#terms" class="ff-drawer__link">Terms &amp; Conditions</a>
+      <a href="#contact" class="ff-drawer__link">Contact</a>
       <a href="tel:18889202503" class="ff-drawer__cta">Call 1-888-920-2503</a>
     </div>
     <button class="ff-drawer__overlay" type="button" aria-label="Close menu"></button>
@@ -73,7 +75,7 @@
     .ff-logo__text .accent{color:var(--ff-orange)}
 
     /* NAV */
-    .ff-nav{display:flex;align-items:center;gap:2.4rem;margin-left:auto;margin-right:auto}
+    .ff-nav{display:flex;align-items:center;gap:2.2rem;margin-left:auto;margin-right:auto}
     .ff-nav__link{position:relative;text-decoration:none;color:var(--ff-text);font-weight:600;transition:color .25s}
     .ff-nav__link:hover{color:var(--ff-blue)}
     .ff-nav__link.is-active::after{content:"";position:absolute;left:0;right:0;margin:auto;bottom:-10px;width:38px;height:3px;background:var(--ff-blue);border-radius:2px}

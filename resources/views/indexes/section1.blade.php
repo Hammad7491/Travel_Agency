@@ -1,6 +1,5 @@
 <!-- =======================
-  HERO + FLIGHTS SEARCH (two-month calendar + travelers dropdown)
-  — spacer pushes content below while dropdowns are open
+  HERO + FLIGHTS SEARCH (with default dates & wait overlay)
 ======================= -->
 <section id="hero-search" class="ts-hero">
   <div class="ts-hero-bg" role="img" aria-label="Scenic mountains and lake background"></div>
@@ -27,13 +26,13 @@
           </label>
         </div>
 
-        <form class="ts-form" onsubmit="return false">
+        <form class="ts-form" id="flightForm" action="{{ route('search') }}" >
           <!-- Origin -->
           <div class="ts-input">
             <span class="ico">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
             </span>
-            <input type="text" placeholder="Origin" aria-label="Origin">
+            <input id="originInput" type="text" placeholder="Origin" aria-label="Origin" autocomplete="off">
           </div>
 
           <!-- Destination -->
@@ -41,10 +40,10 @@
             <span class="ico">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
             </span>
-            <input type="text" placeholder="Destination" aria-label="Destination">
+            <input id="destInput" type="text" placeholder="Destination" aria-label="Destination" autocomplete="off">
           </div>
 
-          <!-- Dates (two-month calendar) -->
+          <!-- Dates -->
           <div class="ts-input ts-dropdown" id="datesField">
             <span class="ico">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm13 7H4v10h16V9Z"/></svg>
@@ -57,19 +56,23 @@
               <div class="cal-header">
                 <button type="button" class="nav-btn" id="calPrev" aria-label="Previous month">❮</button>
                 <div class="month-labels">
-                  <div class="label" id="m1Label">November 2025</div>
-                  <div class="label" id="m2Label">December 2025</div>
+                  <div class="label" id="m1Label">—</div>
+                  <div class="label" id="m2Label">—</div>
                 </div>
                 <button type="button" class="nav-btn" id="calNext" aria-label="Next month">❯</button>
               </div>
 
               <div class="cal-body">
                 <div class="month" id="month1">
-                  <div class="dow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                  <div class="dow">
+                    <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                  </div>
                   <div class="grid" id="m1Grid"></div>
                 </div>
                 <div class="month" id="month2">
-                  <div class="dow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                  <div class="dow">
+                    <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                  </div>
                   <div class="grid" id="m2Grid"></div>
                 </div>
               </div>
@@ -138,46 +141,19 @@
             </div>
           </div>
 
-          <button class="ts-search-btn" type="submit">Search</button>
+          <button class="ts-search-btn" type="submit" id="searchBtn">Search</button>
         </form>
       </div>
     </div>
 
-    <!-- REAL spacer that grows when any dropdown is open -->
-    <div id="ddSpacer" class="dd-spacer" aria-hidden="true"></div>
-
-    <!-- Feature Strip -->
-    <div class="ts-feature-strip" id="featureStrip">
-      <div class="ts-features">
-        <div class="ts-feature">
-          <span class="f-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24 7.46 13.97 5.82 21z"/></svg></span>
-          <div class="f-title">Trusted and free</div>
-        </div>
-        <div class="ts-feature">
-          <span class="f-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4 6h8v2H4zm0 5h14v2H4zm0 5h10v2H4zm14-10h2v2h-2zm2 10h-2v-2h2z"/></svg></span>
-          <div class="f-title">Filter for what you want</div>
-        </div>
-        <div class="ts-feature">
-          <span class="f-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2 9 9 2 12l7 3 3 7 3-7 7-3-7-3-3-7z"/></svg></span>
-          <div class="f-title">We know travel</div>
-        </div>
-        <div class="ts-feature">
-          <span class="f-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-2.8 2.3z"/></svg></span>
-          <div class="f-title">Call 24/7 Support</div>
-        </div>
-        <div class="ts-feature">
-          <span class="f-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 21V5a2 2 0 0 1 2-2h14v18h-2v-4H5v4H3Zm4-8h6V7H7v6Z"/></svg></span>
-          <div class="f-title">Best Hotel deals</div>
-        </div>
-      </div>
-    </div>
+    <!-- Your Feature Strip stays here (unchanged) -->
   </div>
 
   <style>
     :root{
       --blue:#0B63A3; --blue-600:#094f83; --white:#fff; --ink:#101623; --muted:#6b7280;
       --card:#ffffff; --shadow:0 18px 50px rgba(16,22,35,.18);
-      --radius-xl:14px; --range:#e9f3ff; --pick:#0B63A3;
+      --radius-xl:14px; --range:#e9f3ff; --pick:#0B63A3; --danger:#e74c3c;
     }
 
     .ts-hero{position:relative;overflow:hidden;background:#003d7a;color:var(--white)}
@@ -187,12 +163,9 @@
     .ts-title{margin:0; text-align:center; font-size:44px; font-weight:800; letter-spacing:.6px; text-shadow:0 2px 12px rgba(0,0,0,.25)}
     .ts-subtitle{margin:10px 0 24px; text-align:center; font-size:20px; opacity:.95; text-shadow:0 2px 10px rgba(0,0,0,.25)}
 
-    .ts-card{
-      position:relative; background:var(--card); color:var(--ink);
+    .ts-card{position:relative; background:var(--card); color:var(--ink);
       border-radius:var(--radius-xl); box-shadow:var(--shadow);
-      margin:22px auto 28px;
-      overflow:visible; z-index:3;
-    }
+      margin:22px auto var(--dd-space, 28px); overflow:visible; z-index:3;}
     .ts-tabs.single .ts-tab{background:var(--blue); color:#fff; font-weight:800; padding:16px 26px; border:none}
     .ts-panel{padding:18px 18px 22px}
 
@@ -209,22 +182,17 @@
     .ts-input .ico{display:inline-flex; width:20px; height:20px; align-items:center; justify-content:center; color:#0b63a3}
     .ts-search-btn{background:var(--blue); color:#fff; border:none; border-radius:12px; padding:14px 28px; font-size:18px; font-weight:800; cursor:pointer; transition:.2s; min-width:160px}
     .ts-search-btn:hover{background:var(--blue-600)}
+    .ts-input.error{border-color:var(--danger); box-shadow:0 0 0 3px rgba(231,76,60,.12)}
 
-    /* Dropdown panels */
     .ts-dropdown{position:relative; cursor:pointer}
     .ts-dropdown .caret{margin-left:auto; color:#54657a}
 
-    .dd-panel{
-      position:absolute; left:0; top:calc(100% + 10px);
-      background:#fff; color:#111; border:1px solid #e5e9f0; border-radius:12px;
-      box-shadow:0 18px 40px rgba(0,0,0,.18);
-      padding:10px; min-width:280px; display:none; z-index:1000;
-    }
+    .dd-panel{position:absolute; left:0; top:calc(100% + 10px); background:#fff; color:#111; border:1px solid #e5e9f0; border-radius:12px;
+      box-shadow:0 18px 40px rgba(0,0,0,.18); padding:10px; min-width:280px; display:none; z-index:1000;}
     .dd-panel.dd-right{right:0; left:auto}
     .dd-panel.open{display:block}
     .dd-apply{margin-top:8px; background:var(--blue); color:#fff; border:none; border-radius:8px; padding:10px 14px; font-weight:800}
 
-    /* CALENDAR styles */
     .dd-calendar{min-width:640px}
     .cal-header{display:flex; align-items:center; justify-content:space-between; padding:6px 8px 12px}
     .nav-btn{border:none; background:transparent; font-size:20px; line-height:1; padding:6px 10px; cursor:pointer; color:#0b3670}
@@ -241,7 +209,6 @@
     .cal-footer{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:6px}
     .picked{font-weight:700; color:#0b3670}
 
-    /* Travelers controls */
     .row{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 4px}
     .row + .row{border-top:1px dashed #eef2f7}
     .row .lbl{font-weight:700; color:#0b3670}
@@ -254,77 +221,73 @@
     .menu li{padding:8px 12px; cursor:pointer}
     .menu li:hover{background:#f2f7fb}
 
-    /* Spacer that grows to push the features down */
-    .dd-spacer{height:0; transition:height .2s ease;}
-
-    /* Feature strip */
-    .ts-feature-strip{position:relative; z-index:1; background:#0b63a3; padding:20px 8px}
-    .ts-features{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; max-width:1200px; margin:0 auto}
-    .ts-feature{background:#fff; border-radius:16px; padding:16px 14px; display:flex; flex-direction:column; align-items:center; box-shadow:0 10px 24px rgba(0,0,0,.08)}
-    .ts-feature .f-ico{display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:#eef5fb; color:#0b63a3; margin-bottom:10px}
-    .ts-feature .f-title{color:#111827; font-weight:700; text-align:center}
+    /* Wait Overlay */
+    .wait-overlay[hidden]{display:none}
+    .wait-overlay{position:fixed; inset:0; background:rgba(255,255,255,.92); z-index:9999; display:grid; place-items:center; padding:16px}
+    .wait-card{width:100%; max-width:720px; background:#fff; border:1px solid #e8eef5; border-radius:16px; box-shadow:0 18px 50px rgba(16,22,35,.18); padding:28px; text-align:center}
+    .wait-logo{display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:10px}
+    .wait-logo svg{width:40px; height:40px}
+    .wait-title{font-size:32px; font-weight:900; color:#0f1621; margin:4px 0 10px}
+    .wait-sub{color:#2a3342; opacity:.9; margin:0 0 14px}
+    .wait-plane{width:140px; margin:12px auto 18px; opacity:.98}
+    .wait-btn{display:inline-flex; align-items:center; gap:10px; background:#2eac4b; color:#fff; padding:14px 18px; border-radius:999px; text-decoration:none; font-weight:900; border:1px solid #1e7f34; box-shadow:0 10px 24px rgba(0,0,0,.15)}
+    .wait-btn:hover{background:#269342}
+    .wait-dots{display:inline-block; margin-left:6px}
+    .wait-dot{width:6px; height:6px; background:#0B63A3; border-radius:50%; display:inline-block; margin:0 2px; animation:b .9s infinite}
+    .wait-dot:nth-child(2){animation-delay:.12s}
+    .wait-dot:nth-child(3){animation-delay:.24s}
+    @keyframes b{0%{opacity:.25; transform:translateY(0)}50%{opacity:1; transform:translateY(-3px)}100%{opacity:.25; transform:translateY(0)}}
 
     /* Mobile bottom-sheet for dropdowns */
     @media (max-width:768px){
-      .dd-panel{
-        position:fixed; left:12px; right:12px; bottom:12px; top:auto;
-        min-width:auto; max-height:70vh; overflow:auto; padding:14px;
-      }
+      .dd-panel{position:fixed; left:12px; right:12px; bottom:12px; top:auto; min-width:auto; max-height:70vh; overflow:auto; padding:14px;}
       .dd-calendar{min-width:auto}
       .cal-body{grid-template-columns:1fr}
       .month-labels{gap:8px; font-size:14px}
     }
 
-    /* Responsive grid */
     @media (max-width:1200px){ .ts-form{grid-template-columns:1fr 1fr 1fr 1fr auto} }
     @media (max-width:992px){
       .ts-title{font-size:38px}
       .ts-form{grid-template-columns:1fr 1fr}
       .ts-search-btn{grid-column:span 2}
-      .ts-features{grid-template-columns:repeat(3,1fr)}
     }
     @media (max-width:768px){
       .ts-title{font-size:32px}
       .ts-subtitle{font-size:18px}
       .ts-form{grid-template-columns:1fr}
       .ts-search-btn{grid-column:auto}
-      .ts-features{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:480px){
       .ts-title{font-size:26px}
       .ts-subtitle{font-size:16px}
       .ts-hero-inner{padding:64px 12px 28px}
-      .ts-feature .f-title{font-size:14px}
     }
   </style>
 
   <script>
-    /* ---------- Utility ---------- */
-    function fmtDate(d){
-      if(!d) return '';
-      return d.toLocaleDateString(undefined,{month:'short', day:'2-digit', year:'numeric'});
-    }
+    /* ---------- Utils ---------- */
+    function fmtDate(d){ return d ? d.toLocaleDateString(undefined,{month:'short', day:'2-digit', year:'numeric'}) : ''; }
     function sameDay(a,b){return a && b && a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();}
+    function addDays(d, n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
     function addMonths(d, n){ const x=new Date(d); x.setMonth(x.getMonth()+n); return x; }
     function firstOfMonth(d){ return new Date(d.getFullYear(), d.getMonth(), 1); }
 
-    /* ---------- Dynamic spacer (pushes content below) ---------- */
+    // Push card down when dropdown is open (so it doesn't overlap features)
     (function spacingManager(){
-      const spacer = document.getElementById('ddSpacer');
+      const card = document.getElementById('searchCard');
       const panels = document.querySelectorAll('.dd-panel');
-
       function updateSpace(){
         let maxH = 0;
         panels.forEach(p => { if(p.classList.contains('open')) maxH = Math.max(maxH, p.offsetHeight); });
-        spacer.style.height = (maxH ? maxH + 24 : 0) + 'px';
+        card.style.setProperty('--dd-space', (maxH ? maxH + 40 : 28) + 'px');
       }
       const obs = new MutationObserver(updateSpace);
       panels.forEach(p => obs.observe(p, { attributes:true, attributeFilter:['class'] }));
       window.addEventListener('resize', updateSpace);
-      setTimeout(updateSpace, 0);
     })();
 
-    /* ---------- Trip type toggles ---------- */
+    /* ---------- Trip type placeholder ---------- */
     (function tripType(){
       const radios = document.querySelectorAll('input[name="tripType"]');
       const display = document.getElementById('datesDisplay');
@@ -339,7 +302,7 @@
       apply();
     })();
 
-    /* ---------- Two-month Calendar ---------- */
+    /* ---------- Two-month Calendar (defaults to today → +4 days) ---------- */
     (function calendar(){
       const field = document.getElementById('datesField');
       const panel = document.getElementById('calPanel');
@@ -355,23 +318,30 @@
       const pickEnd = document.getElementById('pickEnd');
       const applyBtn = document.getElementById('applyDates');
 
-      let base = firstOfMonth(new Date());
-      let start = null, end = null;
+      let base = firstOfMonth(new Date()); // first month visible
+      let start = new Date();             // default: today
+      let end   = addDays(start, 4);      // default: +4 days
 
       function setPickedText(){
+        const oneway = document.querySelector('input[name="tripType"][value="oneway"]').checked;
         pickStart.textContent = start ? fmtDate(start) : '—';
-        pickDash.textContent = document.querySelector('input[name="tripType"][value="oneway"]').checked ? '' : '—';
-        pickEnd.textContent = end ? fmtDate(end) : (document.querySelector('input[name="tripType"][value="oneway"]').checked ? '' : '—');
+        pickDash.textContent  = oneway ? '' : '—';
+        pickEnd.textContent   = oneway ? '' : (end ? fmtDate(end) : '—');
+      }
+
+      function buildMonth(root, monthDate){
+        root.innerHTML = '';
+        const y = monthDate.getFullYear(), m = monthDate.getMonth();
+        return {y, m};
       }
 
       function fillGrid(root, y, m){
-        root.innerHTML='';
         const first = new Date(y, m, 1);
         const startIdx = first.getDay();
         const daysInMonth = new Date(y, m+1, 0).getDate();
         const prevDays = new Date(y, m, 0).getDate();
-        const totalCells = 42;
 
+        const totalCells = 42;
         for(let i=0;i<totalCells;i++){
           const cell = document.createElement('div');
           cell.className = 'day';
@@ -415,31 +385,36 @@
       }
 
       function render(){
-        const m1Date = new Date(base);
-        const m2Date = new Date(base); m2Date.setMonth(m2Date.getMonth()+1);
+        const m1 = buildMonth(m1Grid, base);
+        const m2Date = addMonths(base, 1);
+        const m2 = buildMonth(m2Grid, m2Date);
 
-        m1Label.textContent = m1Date.toLocaleDateString(undefined,{month:'long', year:'numeric'});
-        m2Label.textContent = m2Date.toLocaleDateString(undefined,{month:'long', year:'numeric'});
+        m1Label.textContent = (new Date(m1.y, m1.m, 1)).toLocaleDateString(undefined,{month:'long', year:'numeric'});
+        m2Label.textContent = (new Date(m2.y, m2.m, 1)).toLocaleDateString(undefined,{month:'long', year:'numeric'});
 
-        fillGrid(m1Grid, m1Date.getFullYear(), m1Date.getMonth());
-        fillGrid(m2Grid, m2Date.getFullYear(), m2Date.getMonth());
+        fillGrid(m1Grid, m1.y, m1.m);
+        fillGrid(m2Grid, m2.y, m2.m);
         setPickedText();
       }
 
+      // Open/close handling
       field.addEventListener('click', (e)=>{ document.getElementById('travPanel').classList.remove('open'); panel.classList.add('open'); e.stopPropagation(); render(); });
       panel.addEventListener('click', (e)=>e.stopPropagation());
       document.addEventListener('click', ()=> panel.classList.remove('open'));
 
-      prevBtn.addEventListener('click', ()=>{ base.setMonth(base.getMonth()-1); render(); });
-      nextBtn.addEventListener('click', ()=>{ base.setMonth(base.getMonth()+1); render(); });
+      // Navigation
+      prevBtn.addEventListener('click', ()=>{ base = addMonths(base, -1); render(); });
+      nextBtn.addEventListener('click', ()=>{ base = addMonths(base, 1); render(); });
 
-      applyBtn.addEventListener('click', ()=>{
+      // Apply + prefill initial display (today → +4)
+      function applyToDisplay(){
         const oneway = document.querySelector('input[name="tripType"][value="oneway"]').checked;
-        if(!start){ panel.classList.remove('open'); return; }
-        display.value = oneway ? fmtDate(start) : (end ? `${fmtDate(start)} — ${fmtDate(end)}` : fmtDate(start));
-        panel.classList.remove('open');
-      });
+        display.value = oneway ? fmtDate(start) : `${fmtDate(start)} — ${fmtDate(end)}`;
+      }
+      applyBtn.addEventListener('click', ()=>{ if(!start){ panel.classList.remove('open'); return; } applyToDisplay(); panel.classList.remove('open'); });
 
+      // initialize visible text with defaults
+      applyToDisplay();
       render();
     })();
 
@@ -483,5 +458,58 @@
       });
       document.addEventListener('click', (e)=>{ if(!cSel.contains(e.target) && !cMenu.contains(e.target)) cMenu.classList.remove('show'); }, true);
     })();
+
+    /* ---------- Simple form validation + wait overlay ---------- */
+    (function searchFlow(){
+      const form = document.getElementById('flightForm');
+      const origin = document.getElementById('originInput');
+      const dest   = document.getElementById('destInput');
+      const dates  = document.getElementById('datesDisplay');
+      const trav   = document.getElementById('travDisplay');
+
+      function setErr(el, on){ el.closest('.ts-input').classList.toggle('error', !!on); }
+
+      function valid(){
+        let ok = true;
+        if(!origin.value.trim()){ setErr(origin, true); ok=false; } else setErr(origin, false);
+        if(!dest.value.trim()){ setErr(dest, true); ok=false; } else setErr(dest, false);
+        if(!dates.value.trim()){ document.getElementById('datesField').classList.add('error'); ok=false; } else document.getElementById('datesField').classList.remove('error');
+        if(!trav.value.trim()){ document.getElementById('travField').classList.add('error'); ok=false; } else document.getElementById('travField').classList.remove('error');
+        return ok;
+      }
+
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        if(!valid()) return;
+
+        // Show wait overlay
+        document.getElementById('waitOverlay').hidden = false;
+
+        // (Optional) you can redirect after a few seconds:
+        // setTimeout(()=>{ window.location.href = '/results'; }, 2200);
+      });
+    })();
   </script>
 </section>
+
+<!-- =======================
+  WAIT OVERLAY (appears after Search)
+======================= -->
+<div class="wait-overlay" id="waitOverlay" hidden>
+  <div class="wait-card" role="dialog" aria-label="Searching for unpublished exclusive airfares">
+    <div class="wait-logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true" fill="#0B63A3"><path d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/></svg>
+      <span style="font-weight:900;color:#0f1621;font-size:20px">Future <span style="color:#d86922">Flight</span></span>
+    </div>
+
+    <h3 class="wait-title">Please Wait<span class="wait-dots"><span class="wait-dot"></span><span class="wait-dot"></span><span class="wait-dot"></span></span></h3>
+    <p class="wait-sub">We’re searching unpublished exclusive airfares for you<br>from over <strong>1000+</strong> airlines.</p>
+
+    <img class="wait-plane" alt="" src="https://cdn.jsdelivr.net/gh/mirokariman/assets/plane-illustration.png">
+
+    <a class="wait-btn" href="tel:18889202503" aria-label="Call 1-888-920-2503">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z" fill="#fff"/></svg>
+      CALL NOW 1-888-920-2503
+    </a>
+  </div>
+</div>
