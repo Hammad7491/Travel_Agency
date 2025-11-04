@@ -497,19 +497,69 @@
 ======================= -->
 <div class="wait-overlay" id="waitOverlay" hidden>
   <div class="wait-card" role="dialog" aria-label="Searching for unpublished exclusive airfares">
+    <!-- ✖ Close button -->
+    <button
+      class="wait-close"
+      type="button"
+      aria-label="Close overlay"
+      onclick="document.getElementById('waitOverlay').hidden = true;"
+    >&times;</button>
+
     <div class="wait-logo">
-      <svg viewBox="0 0 32 32" aria-hidden="true" fill="#0B63A3"><path d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/></svg>
-      <span style="font-weight:900;color:#0f1621;font-size:20px">Future <span style="color:#d86922">Flight</span></span>
+      <svg viewBox="0 0 32 32" aria-hidden="true" fill="#0B63A3">
+        <path d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/>
+      </svg>
+      <span style="font-weight:900;color:#0f1621;font-size:20px">
+        Future <span style="color:#d86922">Flight</span>
+      </span>
     </div>
 
-    <h3 class="wait-title">Please Wait<span class="wait-dots"><span class="wait-dot"></span><span class="wait-dot"></span><span class="wait-dot"></span></span></h3>
-    <p class="wait-sub">We’re searching unpublished exclusive airfares for you<br>from over <strong>1000+</strong> airlines.</p>
+    <h3 class="wait-title">
+      Please Wait
+      <span class="wait-dots">
+        <span class="wait-dot"></span><span class="wait-dot"></span><span class="wait-dot"></span>
+      </span>
+    </h3>
+    <p class="wait-sub">
+      We’re searching unpublished exclusive airfares for you<br>
+      from over <strong>1000+</strong> airlines.
+    </p>
 
     <img class="wait-plane" alt="" src="https://cdn.jsdelivr.net/gh/mirokariman/assets/plane-illustration.png">
 
-    <a class="wait-btn" href="tel:18889202503" aria-label="Call 1-888-920-2503">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z" fill="#fff"/></svg>
-      CALL NOW 1-888-920-2503
+    <a class="wait-btn" href="tel:+1-833-387-2565" aria-label="Call +1-833-387-2565">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z" fill="#fff"/>
+      </svg>
+      CALL NOW +1-833-387-2565
     </a>
   </div>
 </div>
+
+<!-- ✖ Button Style -->
+<style>
+  .wait-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #0B63A3;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+    transition: all .2s ease;
+  }
+  .wait-close:hover {
+    background: #0B63A3;
+    color: #fff;
+    transform: rotate(90deg);
+  }
+</style>
+

@@ -28,7 +28,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-2.8 2.3z" fill="#fff"/>
       </svg>
-      <span class="ff-cta__text">Call 1-888-920-2503</span>
+      <span class="ff-cta__text">Call +1-833-387-2565</span>
     </a>
 
     <!-- Burger (mobile) -->
@@ -47,7 +47,7 @@
       <a href="#privacy" class="ff-drawer__link">Privacy Policy</a>
       <a href="#terms" class="ff-drawer__link">Terms &amp; Conditions</a>
       <a href="#contact" class="ff-drawer__link">Contact</a>
-      <a href="tel:18889202503" class="ff-drawer__cta">Call 1-888-920-2503</a>
+      <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>
     <button class="ff-drawer__overlay" type="button" aria-label="Close menu"></button>
   </div>

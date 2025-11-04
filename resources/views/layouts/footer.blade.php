@@ -40,7 +40,7 @@
     <section class="ff-sf-col">
       <h3 class="ff-sf-head">Contact</h3>
       <ul class="ff-sf-list">
-        <li><a href="tel:18889202503">1-888-920-2503</a></li>
+        <li><a href="tel:+1-833-387-2565">+1-833-387-2565</a></li>
         <li>Available 24/7</li>
       </ul>
     </section>
@@ -54,11 +54,11 @@
   </div>
 
   <!-- Floating call button -->
-  <a href="tel:18889202503" class="ff-sf-fab" aria-label="Call 1-888-920-2503">
+  <a href="tel:+1-833-387-2565" class="ff-sf-fab" aria-label="Call +1-833-387-2565">
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
       <path fill="#fff" d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z"/>
     </svg>
-    <span>1-888-920-2503</span>
+    <span>+1-833-387-2565</span>
   </a>
 
   <style>
