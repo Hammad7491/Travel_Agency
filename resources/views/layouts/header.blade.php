@@ -1,27 +1,45 @@
 <header class="ff-header">
   <div class="ff-header__inner">
     <!-- Brand -->
-    <a href="#" class="ff-logo" aria-label="Future Flight - Home">
-      <!-- SAME AIRPLANE SHAPE — now bigger -->
+    <a href="{{ route('index') }}" class="ff-logo" aria-label="Future Flight - Home">
       <svg class="ff-logo__icon" viewBox="0 0 32 32" aria-hidden="true" fill="#0B63A3">
         <path d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/>
       </svg>
-
       <span class="ff-logo__dot" aria-hidden="true"></span>
-
-      <span class="ff-logo__text">
-        <strong>Future</strong> <span class="accent">Flight</span>
-      </span>
+      <span class="ff-logo__text"><strong>Future</strong> <span class="accent">Flight</span></span>
     </a>
 
     <!-- Navigation -->
     <nav class="ff-nav" aria-label="Primary">
-      <a href="{{ route('index') }}" class="ff-nav__link is-active">Home</a>
-      <a href="{{ route('aboutus') }}" class="ff-nav__link">About Us</a>
+      <a href="{{ route('index') }}"
+         class="ff-nav__link{{ request()->routeIs('index') ? ' is-active' : '' }}"
+         @if(request()->routeIs('index')) aria-current="page" @endif>
+        Home
+      </a>
 
-      <a href="{{ route('policy') }}" class="ff-nav__link">Privacy Policy</a>
-      <a href="{{ route('terms') }}">Terms &amp; Conditions</a>
-      <a href= "{{ route('contact') }}" class="ff-nav__link">Contact</a>
+      <a href="{{ route('aboutus') }}"
+         class="ff-nav__link{{ request()->routeIs('aboutus') ? ' is-active' : '' }}"
+         @if(request()->routeIs('aboutus')) aria-current="page" @endif>
+        About Us
+      </a>
+
+      <a href="{{ route('policy') }}"
+         class="ff-nav__link{{ request()->routeIs('policy') ? ' is-active' : '' }}"
+         @if(request()->routeIs('policy')) aria-current="page" @endif>
+        Privacy Policy
+      </a>
+
+      <a href="{{ route('terms') }}"
+         class="ff-nav__link{{ request()->routeIs('terms') ? ' is-active' : '' }}"
+         @if(request()->routeIs('terms')) aria-current="page" @endif>
+        Terms &amp; Conditions
+      </a>
+
+      <a href="{{ route('contact') }}"
+         class="ff-nav__link{{ request()->routeIs('contact') ? ' is-active' : '' }}"
+         @if(request()->routeIs('contact')) aria-current="page" @endif>
+        Contact
+      </a>
     </nav>
 
     <!-- Call CTA -->
@@ -43,11 +61,32 @@
   <!-- Drawer (mobile) -->
   <div class="ff-drawer" id="drawer" hidden>
     <div class="ff-drawer__panel" role="dialog" aria-label="Mobile Menu">
-      <a href="{{ route('index') }}" class="ff-drawer__link">Home</a>
-      <a href="{{ route('aboutus') }}" class="ff-drawer__link">About Us</a>
-      <a href="{{ route('policy') }}" class="ff-drawer__link">Privacy Policy</a>
-      <a href="{{ route('terms') }}" class="ff-drawer__link">Terms &amp; Conditions</a>
-      <a href="{{ route('contact') }}" class="ff-drawer__link">Contact</a>
+      <a href="{{ route('index') }}"
+         class="ff-drawer__link{{ request()->routeIs('index') ? ' is-active' : '' }}"
+         @if(request()->routeIs('index')) aria-current="page" @endif>
+        Home
+      </a>
+      <a href="{{ route('aboutus') }}"
+         class="ff-drawer__link{{ request()->routeIs('aboutus') ? ' is-active' : '' }}"
+         @if(request()->routeIs('aboutus')) aria-current="page" @endif>
+        About Us
+      </a>
+      <a href="{{ route('policy') }}"
+         class="ff-drawer__link{{ request()->routeIs('policy') ? ' is-active' : '' }}"
+         @if(request()->routeIs('policy')) aria-current="page" @endif>
+        Privacy Policy
+      </a>
+      <a href="{{ route('terms') }}"
+         class="ff-drawer__link{{ request()->routeIs('terms') ? ' is-active' : '' }}"
+         @if(request()->routeIs('terms')) aria-current="page" @endif>
+        Terms &amp; Conditions
+      </a>
+      <a href="{{ route('contact') }}"
+         class="ff-drawer__link{{ request()->routeIs('contact') ? ' is-active' : '' }}"
+         @if(request()->routeIs('contact')) aria-current="page" @endif>
+        Contact
+      </a>
+
       <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>
     <button class="ff-drawer__overlay" type="button" aria-label="Close menu"></button>
@@ -59,10 +98,7 @@
       --ff-blue:#0B63A3; --ff-blue-dark:#084f82;
       --ff-orange:#d86922; --ff-white:#fff;
       --ff-radius:20px; --ff-shadow:0 6px 18px rgba(15,22,33,.06);
-
-      /* NEW: control logo sizes here */
-      --logo-size: 44px;    /* default desktop size */
-      --dot-size: 10px;
+      --logo-size:44px; --dot-size:10px;
     }
 
     .ff-header{position:sticky;top:0;z-index:50;background:var(--ff-bg);box-shadow:var(--ff-shadow)}
@@ -79,7 +115,11 @@
     .ff-nav{display:flex;align-items:center;gap:2.2rem;margin-left:auto;margin-right:auto}
     .ff-nav__link{position:relative;text-decoration:none;color:var(--ff-text);font-weight:600;transition:color .25s}
     .ff-nav__link:hover{color:var(--ff-blue)}
-    .ff-nav__link.is-active::after{content:"";position:absolute;left:0;right:0;margin:auto;bottom:-10px;width:38px;height:3px;background:var(--ff-blue);border-radius:2px}
+    .ff-nav__link.is-active{color:var(--ff-blue)}
+    .ff-nav__link.is-active::after{
+      content:"";position:absolute;left:0;right:0;margin:auto;bottom:-10px;width:38px;height:3px;
+      background:var(--ff-blue);border-radius:2px
+    }
 
     /* CTA */
     .ff-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--ff-blue);color:var(--ff-white);padding:.7rem 1.2rem;border-radius:26px;text-decoration:none;font-weight:800;transition:transform .15s,background .2s}
@@ -97,22 +137,19 @@
     @keyframes ff-slide-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
     .ff-drawer__link{padding:.95rem 0;border-bottom:1px solid #e8eef5;text-decoration:none;color:var(--ff-text);font-weight:600}
     .ff-drawer__link:hover{color:var(--ff-blue)}
+    .ff-drawer__link.is-active{color:var(--ff-blue);font-weight:800}
     .ff-drawer__cta{margin-top:1rem;text-align:center;background:var(--ff-blue);color:#fff;padding:.75rem 1rem;border-radius:16px;text-decoration:none;font-weight:700}
 
-    /* Responsive: scale logo gracefully */
-    @media (min-width:1400px){
-      :root { --logo-size: 48px; --dot-size: 12px; }
-    }
+    /* Responsive logo sizing */
+    @media (min-width:1400px){ :root{ --logo-size:48px; --dot-size:12px; } }
     @media (max-width:1024px){
       .ff-nav{display:none}
       .ff-burger{display:flex;margin-left:auto}
-      :root { --logo-size: 40px; --dot-size: 9px; }
+      :root{ --logo-size:40px; --dot-size:9px; }
     }
-    @media (max-width:640px){
-      :root { --logo-size: 34px; --dot-size: 8px; }
-    }
+    @media (max-width:640px){ :root{ --logo-size:34px; --dot-size:8px; } }
     @media (max-width:420px){
-      :root { --logo-size: 30px; --dot-size: 7px; }
+      :root{ --logo-size:30px; --dot-size:7px; }
       .ff-cta__text{display:none}
     }
   </style>
