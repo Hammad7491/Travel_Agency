@@ -24,3 +24,5 @@ Route::get('/', [PagesController::class, 'index'])
 
          Route::get('/terms', [PagesController::class, 'terms'])
          ->name('terms');
+
+         Route::get('/contact', [PagesController::class, 'contact'])->name('contact');

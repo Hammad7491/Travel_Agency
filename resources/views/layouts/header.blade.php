@@ -21,7 +21,7 @@
 
       <a href="{{ route('policy') }}" class="ff-nav__link">Privacy Policy</a>
       <a href="{{ route('terms') }}">Terms &amp; Conditions</a>
-      <a href="#contact" class="ff-nav__link">Contact</a>
+      <a href= "{{ route('contact') }}" class="ff-nav__link">Contact</a>
     </nav>
 
     <!-- Call CTA -->
@@ -47,7 +47,7 @@
       <a href="{{ route('aboutus') }}" class="ff-drawer__link">About Us</a>
       <a href="{{ route('policy') }}" class="ff-drawer__link">Privacy Policy</a>
       <a href="{{ route('terms') }}" class="ff-drawer__link">Terms &amp; Conditions</a>
-      <a href="#contact" class="ff-drawer__link">Contact</a>
+      <a href="{{ route('contact') }}" class="ff-drawer__link">Contact</a>
       <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>
     <button class="ff-drawer__overlay" type="button" aria-label="Close menu"></button>
