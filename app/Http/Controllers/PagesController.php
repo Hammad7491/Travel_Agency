@@ -19,4 +19,10 @@ class PagesController extends Controller
         // Pass it to the view
         return view('search', compact('phone'));
     }
+
+
+    public function aboutus()
+    {
+        return view('aboutus');
+    }
 }

@@ -17,7 +17,8 @@
     <!-- Navigation -->
     <nav class="ff-nav" aria-label="Primary">
       <a href="#" class="ff-nav__link is-active">Home</a>
-      <a href="#about" class="ff-nav__link">About Us</a>
+      <a href="{{ route('aboutus') }}" class="ff-nav__link">About Us</a>
+
       <a href="#privacy" class="ff-nav__link">Privacy Policy</a>
       <a href="#terms" class="ff-nav__link">Terms &amp; Conditions</a>
       <a href="#contact" class="ff-nav__link">Contact</a>

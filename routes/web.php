@@ -10,3 +10,7 @@ Route::get('/', [PagesController::class, 'index'])
 
          Route::get('/search', [PagesController::class, 'search'])
          ->name('search');
+
+
+         Route::get('/aboutus', [PagesController::class, 'aboutus'])
+         ->name('aboutus');
