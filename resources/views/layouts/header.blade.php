@@ -43,7 +43,7 @@
       <a href="{{ route('policy') }}" class="ff-drawer__link {{ request()->routeIs('policy') ? 'is-active' : '' }}">Privacy Policy</a>
       <a href="{{ route('terms') }}" class="ff-drawer__link {{ request()->routeIs('terms') ? 'is-active' : '' }}">Terms &amp; Conditions</a>
       <a href="{{ route('contact') }}" class="ff-drawer__link {{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact</a>
-      <a href="tel:18889202503" class="ff-drawer__cta">Call +1-833-387-2565</a>
+      <a href="tel:+1-833-387-2565" class="ff-drawer__cta">Call +1-833-387-2565</a>
     </div>
 
     <!-- Overlay UNDER the panel via z-index -->
