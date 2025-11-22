@@ -1,5 +1,5 @@
 <!-- =======================
-  SIMPLE FOOTER — Future Flight
+  SIMPLE FOOTER — Dream Tours (Updated)
 ======================= -->
 <footer class="ff-simple-footer">
   <div class="ff-sf-wrap">
@@ -26,16 +26,6 @@
       </ul>
     </section>
 
-    <!-- Company -->
-    <section class="ff-sf-col">
-      <h3 class="ff-sf-head">Company</h3>
-      <ul class="ff-sf-list">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#privacy">Privacy Policy</a></li>
-        <li><a href="#terms">Terms &amp; Conditions</a></li>
-      </ul>
-    </section>
-
     <!-- Contact -->
     <section class="ff-sf-col">
       <h3 class="ff-sf-head">Contact</h3>
@@ -48,8 +38,25 @@
 
   <hr class="ff-sf-rule"/>
 
+  <!-- Disclaimer -->
+  <div class="ff-sf-disclaimer">
+    <p>
+      <strong>Disclaimer:</strong>
+      dreamtoursreservation.com connects users with partner travel agents who assist with flight bookings
+      and related services over the phone. We do not offer direct online booking. All bookings are subject
+      to the terms and conditions of the respective service providers. While we strive for accuracy,
+      availability and pricing may vary. By using this site, you agree to our Terms &amp; Conditions
+      and Privacy Policy.
+    </p>
+  </div>
+
+  <!-- Centered Address -->
+  <div class="ff-sf-address-center">
+    <p><strong>Address:</strong> 2853 S Sossaman RD, Mesa, AZ 85212</p>
+  </div>
+
   <div class="ff-sf-bottom">
-    <p class="ff-sf-copy">© <span id="ffYear"></span> FDream Tours. All rights reserved.</p>
+    <p class="ff-sf-copy">© <span id="ffYear"></span> dreamtoursreservation.com – All Rights Reserved.</p>
     <p class="ff-sf-line">Dedicated to excellence in air travel.</p>
   </div>
 
@@ -77,7 +84,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr .8fr;
+      grid-template-columns: 1.2fr .8fr .8fr;
       gap: 28px;
     }
 
@@ -87,12 +94,27 @@
     .ff-sf-title { font-size: 24px; font-weight: 900; color: #fff; }
     .ff-sf-title span { color: #0B63A3; }
 
-    .ff-sf-tag { margin: 10px 0 0; color: #b5c2d3; line-height: 1.6; max-width: 420px; }
+    .ff-sf-tag {
+      margin: 10px 0 0;
+      color: #b5c2d3;
+      line-height: 1.6;
+      max-width: 420px;
+    }
 
-    .ff-sf-head { margin: 0 0 10px; color: #fff; font-size: 17px; font-weight: 800; }
+    .ff-sf-head {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+    }
 
-    .ff-sf-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-    .ff-sf-list a { color: #dfe8f2; text-decoration: none; font-weight: 600; }
+    .ff-sf-list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 8px;
+    }
+    .ff-sf-list a {
+      color: #dfe8f2; text-decoration: none; font-weight: 600;
+    }
     .ff-sf-list a:hover { color: #fff; text-decoration: underline; }
 
     .ff-sf-rule {
@@ -100,12 +122,36 @@
       border: none; border-top: 1px solid #1a2a38;
     }
 
-    .ff-sf-bottom { max-width: 1200px; margin: 0 auto; text-align: center; color: #b5c2d3; }
+    /* Disclaimer */
+    .ff-sf-disclaimer {
+      max-width: 1200px;
+      margin: 0 auto 15px;
+      color: #9fb1c4;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Centered Address */
+    .ff-sf-address-center {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #c7d6e5;
+    }
+
+    .ff-sf-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      color: #b5c2d3;
+    }
     .ff-sf-copy { margin: 0; font-size: 14px; }
     .ff-sf-line { margin: 4px 0 0; font-size: 13px; color: #9fb1c4; }
 
     /* Floating Call Button */
-    .ff-sf-fab{
+    .ff-sf-fab {
       position: fixed;
       right: 20px;
       bottom: 20px;
@@ -122,45 +168,18 @@
       border: 1px solid rgba(255,255,255,.1);
       z-index: 999;
       font-size: 14px;
-      line-height: 1;
     }
-    .ff-sf-fab:hover{ background:#084f82; }
+    .ff-sf-fab:hover { background:#084f82; }
 
-    /* Tablet ↓ : keep right corner, slightly smaller */
-    @media (max-width: 768px){
-      .ff-sf-fab{
-        right: 16px; bottom: 16px;
-        padding: 10px 12px;
-        gap: 8px;
-        font-size: 13px;
-        box-shadow: 0 8px 18px rgba(0,0,0,.28);
-      }
-    }
-
-    /* Mobile ↓ : compact in the right corner */
     @media (max-width: 640px){
-      .ff-sf-wrap{ grid-template-columns: 1fr; }
-      .ff-sf-fab{
-        right: 14px; bottom: 14px;
-        padding: 8px 10px;
-        gap: 6px;
-        font-size: 12px;
-        border-radius: 999px;
-      }
-      .ff-sf-fab svg{ width: 16px; height: 16px; }
-    }
-
-    /* Very small phones: keep number but extra compact */
-    @media (max-width: 360px){
-      .ff-sf-fab{
-        right: 12px; bottom: 12px;
-        padding: 8px 9px;
-        font-size: 11px;
-      }
+      .ff-sf-wrap { grid-template-columns: 1fr; }
     }
   </style>
 
   <script>
-    (function(){ const y=document.getElementById('ffYear'); if(y) y.textContent=new Date().getFullYear(); })();
+    (function(){
+      const y=document.getElementById('ffYear');
+      if(y) y.textContent=new Date().getFullYear();
+    })();
   </script>
 </footer>

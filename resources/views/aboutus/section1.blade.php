@@ -6,7 +6,7 @@
   <div class="about-head">
     <h1>About Us</h1>
     <p class="lead">
-      At Crown Tours Reservation, we believe travel is more than getting from A to B — it’s about
+      At Dream Tours Reservation, we believe travel is more than getting from A to B — it’s about
       experiences, memories, and connections that last a lifetime.
     </p>
     <div class="badges">
@@ -30,7 +30,7 @@
     <div class="card">
       <h2>Who We Are</h2>
       <p>
-        Crown Tours Reservation was founded with a vision to make travel simple, affordable, and accessible
+        Dream Tours Reservation was founded with a vision to make travel simple, affordable, and accessible
         for everyone. From booking flights and hotels to planning complete vacation packages, we provide
         end-to-end solutions for individuals, families, and businesses.
       </p>
@@ -107,13 +107,13 @@
       <h2>Our Mission</h2>
       <p>
         To inspire and enable people to travel confidently, explore freely, and create lasting memories.
-        We want every journey with Crown Tours Reservation to feel smooth, secure, and unforgettable.
+        We want every journey with Dream Tours Reservation to feel smooth, secure, and unforgettable.
       </p>
     </div>
     <div class="panel">
       <h2>Our Promise</h2>
       <p>
-        With Crown Tours Reservation, you’re not just booking a trip — you’re choosing a trusted partner
+        With Dream Tours Reservation, you’re not just booking a trip — you’re choosing a trusted partner
         committed to your satisfaction from start to finish.
       </p>
       <ul class="mini">
@@ -140,10 +140,10 @@
 
   <!-- CTA -->
   <div class="cta">
-    <h2>Travel smart. Travel safe. Travel with Crown Tours Reservation.</h2>
+    <h2>Travel smart. Travel safe. Travel with Dream Tours Reservation.</h2>
     <p>Ready to plan your next trip? Our experts are here for you 24/7.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="tel:18333872565" aria-label="Call Crown Tours Reservation">Call +1-833-387-2565</a>
+      <a class="btn-primary" href="tel:18333872565" aria-label="Call Dream Tours Reservation">Call +1-833-387-2565</a>
       <a class="btn-ghost" href="{{ route('search') }}">Find Deals</a>
     </div>
   </div>
