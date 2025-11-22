@@ -9,7 +9,7 @@
         <svg class="ff-sf-logo" viewBox="0 0 32 32" aria-hidden="true">
           <path fill="#0B63A3" d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/>
         </svg>
-        <span class="ff-sf-title">Future <span>Flight</span></span>
+        <span class="ff-sf-title">Dream <span>Tours</span></span>
       </div>
       <p class="ff-sf-tag">
         Your trusted partner for seamless flight booking and travel management.
@@ -49,7 +49,7 @@
   <hr class="ff-sf-rule"/>
 
   <div class="ff-sf-bottom">
-    <p class="ff-sf-copy">© <span id="ffYear"></span> Future Flight. All rights reserved.</p>
+    <p class="ff-sf-copy">© <span id="ffYear"></span> FDream Tours. All rights reserved.</p>
     <p class="ff-sf-line">Dedicated to excellence in air travel.</p>
   </div>
 

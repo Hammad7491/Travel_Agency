@@ -38,7 +38,7 @@
         </h3>
 
         <p>
-          We are <strong>crowntoursreservation.com</strong> — your go-to place for fast and easy flight bookings!
+          We are <strong>dreamtoursreservation.com</strong> — your go-to place for fast and easy flight bookings!
           Whether you need to book, change, or cancel a flight, we make it simple. Just call us, tell us where and
           when you want to go, and we’ll find the best deals in minutes. No more endless searching — we do it for you.
         </p>
@@ -65,7 +65,7 @@
           Disclaimer
         </h3>
         <p>
-          <strong>crowntoursreservation.com</strong> is a referral service that connects callers with third-party
+          <strong>dreamtoursreservation.com</strong> is a referral service that connects callers with third-party
           flight providers. We share available flight information but do not guarantee specific results or prices.
           Calls are free, but services you choose may involve costs.
         </p>

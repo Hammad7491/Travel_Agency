@@ -6,7 +6,7 @@
         <path d="M16 4c-1.1 0-2 .9-2 2v4l-8 4v2l8-2v6l-3 2v2l5-1 5 1v-2l-3-2v-6l8 2v-2l-8-4V6c0-1.1-.9-2-2-2z"/>
       </svg>
       <span class="ff-logo__dot" aria-hidden="true"></span>
-      <span class="ff-logo__text"><strong>Future</strong> <span class="accent">Flight</span></span>
+      <span class="ff-logo__text"><strong>Dream</strong> <span class="accent">Tours</span></span>
     </a>
 
     <!-- Navigation -->
