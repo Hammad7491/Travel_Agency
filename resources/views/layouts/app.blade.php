@@ -13,12 +13,12 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="author" content="Jthemes"/>	
-		<meta name="description" content="Future Flight — Crown Tours Reservation. Find unbeatable airfare deals, flight changes, cancellations & 24/7 live travel support. Call now to book exclusive unpublished flight deals." />
-		<meta name="keywords" content="Future Flight, Crown Tours Reservation, flight booking, cheap flights, airline deals, travel support, 24/7 booking help, call to book airfare, unpublished flight deals, travel agency, flight changes, flight cancellations" />
+		<meta name="description" content="Dream Tours — Dream Tours Reservation. Find unbeatable airfare deals, flight changes, cancellations & 24/7 live travel support. Call now to book exclusive unpublished flight deals." />
+		<meta name="keywords" content="Dream Tours, Dream Tours Reservation, flight booking, cheap flights, airline deals, travel support, 24/7 booking help, call to book airfare, unpublished flight deals, travel agency, flight changes, flight cancellations" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				
   		<!-- SITE TITLE -->
-		<title>Future Flight — Crown Tours Reservation | Book Flights & 24/7 Phone Support</title>
+		<title>Dream Tours Reservation| Book Flights & 24/7 Phone Support</title>
 
 							<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- Animate.css for flip animations -->
