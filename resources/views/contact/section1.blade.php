@@ -101,11 +101,11 @@
           </div>
           <div>
             <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z"/></svg>
-            1-888-920-2503
+            602-888-1396
           </div>
           <div>
             <svg viewBox="0 0 24 24"><path d="M2 4h20v14H2V4Zm2 2v2l8 5 8-5V6H4Zm16 10V9l-8 5-8-5v7h16Z"/></svg>
-            info@crowntoursreservation.com
+            info@dreamtoursreservation.com
           </div>
         </div>
       </div>

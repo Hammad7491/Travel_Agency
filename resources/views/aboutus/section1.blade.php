@@ -144,7 +144,7 @@
     <p>Ready to plan your next trip? Our experts are here for you 24/7.</p>
     <div class="cta-actions">
       <a class="btn-primary" href="tel:18333872565" aria-label="Call Dream Tours Reservation">Call +1-833-387-2565</a>
-      <a class="btn-ghost" href="{{ route('search') }}">Find Deals</a>
+      
     </div>
   </div>
 </section>

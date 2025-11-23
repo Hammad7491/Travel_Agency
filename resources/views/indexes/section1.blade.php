@@ -521,8 +521,8 @@
       </span>
     </h3>
     <p class="wait-sub">
-      We’re searching unpublished exclusive airfares for you<br>
-      Call now from instant support save up to <strong>65%</strong> on Airline Reservation.
+      <br>
+      Call now from instant support<br> save up to <strong>65%</strong> on Airline Reservation.
     </p>
 
     <img class="wait-plane" alt="" src="https://cdn.jsdelivr.net/gh/mirokariman/assets/plane-illustration.png">
