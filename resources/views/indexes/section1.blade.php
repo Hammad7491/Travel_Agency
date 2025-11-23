@@ -522,7 +522,7 @@
     </h3>
     <p class="wait-sub">
       We’re searching unpublished exclusive airfares for you<br>
-      from over <strong>1000+</strong> airlines.
+      Call now from instant support save up to <strong>65%</strong> on Airline Reservation.
     </p>
 
     <img class="wait-plane" alt="" src="https://cdn.jsdelivr.net/gh/mirokariman/assets/plane-illustration.png">
