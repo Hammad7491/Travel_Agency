@@ -515,7 +515,7 @@
     </div>
 
     <h3 class="wait-title">
-      Please Wait
+      Call Now
       <span class="wait-dots">
         <span class="wait-dot"></span><span class="wait-dot"></span><span class="wait-dot"></span>
       </span>
