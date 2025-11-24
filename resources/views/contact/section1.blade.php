@@ -95,10 +95,7 @@
         <p><strong>We love our customers, so feel free to visit during normal business hours.</strong></p>
 
         <div class="ff-info">
-          <div>
-            <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 5.2 7.2 10.4 8.4 11.2.4.3.8.3 1.2 0C13.8 21.4 21 16.2 21 11c0-5-4-9-9-9Zm0 11.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
-            Lahore Cantt, Punjab, Pakistan
-          </div>
+          
           <div>
             <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 4.1 5.6 7.2 7.2l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.2.6 1.2 1.2V22c0 .7-.6 1.2-1.2 1.2C9.5 23.2.8 14.5.8 3.2.8 2.6 1.3 2 2 2h4.9c.7 0 1.2.6 1.2 1.2 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L6.6 10.8Z"/></svg>
             602-888-1396
